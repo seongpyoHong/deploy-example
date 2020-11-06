@@ -15,9 +15,19 @@ spec:
       labels:
         app: springboot
     spec:
+      volumes:
+      - name: google-cloud-key
+        secret:
+          secretName: springboot-gcs-key
       containers:
       - image: asia.gcr.io/able-groove-288900/argo
         imagePullPolicy: Always
+        volumeMounts:
+        - name: google-cloud-key
+          mountPath: /var/secrets/google
+        env:
+        - name: GOOGLE_APPLICATION_CREDENTIALS
+          value: /var/secrets/google/key.json
         name: server
         resources: {}
         terminationMessagePath: /dev/termination-log
