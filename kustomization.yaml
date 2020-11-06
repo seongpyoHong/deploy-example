@@ -5,4 +5,4 @@ resources:
 - service.yaml
 images:
 - name: asia.gcr.io/able-groove-288900/argo
-  newTag: 87046fa
+  newTag: latest
