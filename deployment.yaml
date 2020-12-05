@@ -19,6 +19,9 @@ spec:
       - name: google-cloud-key
         secret:
           secretName: springboot-gcs-key
+      - name: logs
+        emptyDir: {}
+      
       containers:
       - name: fluentd
         image: asia.gcr.io/able-groove-288900/fluentd
