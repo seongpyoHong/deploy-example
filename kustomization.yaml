@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
 - deployment.yaml
 - service.yaml
+- elasticsearch.yaml
 images:
 - name: asia.gcr.io/able-groove-288900/argo
   newTag: latest
